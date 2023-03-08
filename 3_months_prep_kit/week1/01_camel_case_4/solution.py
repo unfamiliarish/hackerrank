@@ -63,7 +63,6 @@ def format(string):
         return ""
 
     string = string.strip()
-    breakpoint
     task, output_type, word = string.split(";")
 
     if task == "S":
