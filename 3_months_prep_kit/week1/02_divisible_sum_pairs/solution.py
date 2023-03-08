@@ -32,7 +32,7 @@ def remove_zeros(array) -> list[int]:
     return [el for el in array if el != 0]
 
 
-def divisibleSumPairs(arr_len, divisor, array):
+def divisibleSumPairs_old(arr_len, divisor, array):
     if divisor == 0 or divisor == math.inf:
         return 0
 
@@ -43,8 +43,21 @@ def divisibleSumPairs(arr_len, divisor, array):
         numbers[val] += 1
 
     result = recurse_sum_pairs(numbers, set(numbers.keys()), divisor)
-    # breakpoint()
     return result
+
+
+def divisibleSumPairs(arr_len, divisor, array):
+    if divisor == 0 or divisor == math.inf:
+        return 0
+
+    count = 0
+    for i in range(arr_len):
+        for j in range(i + 1, arr_len):
+            summand = array[i] + array[j]
+            if summand and summand % divisor == 0:
+                count += 1
+
+    return count
 
 
 assert divisibleSumPairs(6, 5, [1, 2, 3, 4, 5, 6]) == 3
