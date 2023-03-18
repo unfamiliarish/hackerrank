@@ -5,10 +5,12 @@ def flippingMatrix(matrix) -> int:
     flattened = [num for row in matrix for num in row]
     sorted_nums = sorted(flattened)
 
-    n = len(matrix) // 2
-    max = sum(sorted_nums[n:])
+    # nxn elements in upper left quadrant
+    # nxn = 2n = length of side of matrix
+    count = len(matrix)
+    # get highest 2n elements and sum
+    max = sum(sorted_nums[-count:])
 
-    breakpoint()
     return max
 
 
