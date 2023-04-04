@@ -1,6 +1,25 @@
+# from math import ceil
+
+
 def separateNumbers(num_str):
     # Write your code here
-    
+    if len(num_str) <= 1:
+        print("NO")
+        return "NO"
+
+    longest_sub_num = len(num_str) // 2
+    for sub_num_len in range(1, longest_sub_num + 1):
+        first_num = curr_num = int(num_str[:sub_num_len])
+
+        beautiful_num: str = str(curr_num)
+        while len(beautiful_num) < len(num_str):
+            curr_num += 1
+            beautiful_num = beautiful_num + str(curr_num)
+            if beautiful_num == num_str:
+                print(f"YES {first_num}")
+                return f"YES {first_num}"
+    print("NO")
+    return "NO"
 
 
 assert separateNumbers("1234") == "YES 1"  # yes 1
