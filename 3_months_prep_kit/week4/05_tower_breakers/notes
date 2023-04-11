@@ -1,0 +1,68 @@
+-   -
+-   -
+-   -
+-   -
+-   -
+-   -
+6   6
+
+two towers, height of 6 
+
+tower, height x, reduce to height y
+where 1 <= y < x and x % y == 0
+
+-2 => 6 -> 4, but 6%4 != 0
+ 
+valid moves:
+-3 => 6 -> 3, 6 % 3 == 0
+-4 => 6 -> 2, 6 % 2 == 0
+-5 => 6 -> 1, 6 % 1 == 0
+
+
+can have arbitrary number of towers 
+both players act on the same board, like jenga
+
+player 1 always moves first
+both players always play optimally 
+- what does it mean to be optimal?
+
+
+this needs to be done recursively
+
+
+----
+
+
+the problems in this section always went backwards 
+- building the solution on its own, then comparing it with the problem specs 
+
+right, 
+1) beautiful numbers 
+2) multiples and divisors of the two arrays
+
+we have a collection of buildings
+1 <= n,m <= 10^6
+
+which means, we could have up to one million buildings (1,000,000) 
+this can't be done brute force, and it can't be done trivially 
+
+what does it mean for the players to each play optimally?
+
+it gets complicated when more buildings get introduced 
+- with two buildings, p1 played to keep the building as tall as possible? 
+- with one building, p1 played to lower the building as much as possible
+
+
+in an interview, this would definitely be a question where i'd be pinning down 
+what the heck optimally means
+
+
+supp 
+n = 3, m = 4
+
+4,4,4
+
+-2 => 4 -> 2, 4%2 == 0
+-3 => 4 -> 1, 4%1 == 0
+
+p1 -> 
